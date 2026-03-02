@@ -22,10 +22,10 @@
     />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
-    <script defer type="module" src="src/index.js?v=9"></script>
+    <script defer type="module" src="src/index.js?v=11"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="dist/output.css?v=9" />
+    <link rel="stylesheet" href="dist/output.css?v=11" />
 
     <title>Who Wants to Be a Millionaire</title>
   </head>
@@ -184,6 +184,12 @@
 
         <!-- Game Control Buttons - Fixed Bottom Right -->
         <div class="fixed bottom-3 right-3 flex flex-col gap-1 z-50">
+          <button
+            id="show-choice-btn"
+            class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"
+          >
+            Show Choice
+          </button>
           <button
             id="reveal-answer-btn"
             class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"

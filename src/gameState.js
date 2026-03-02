@@ -64,6 +64,7 @@ function resetState() {
     options[i].classList.remove("selected-answer");
     options[i].classList.remove("correct-answer");
     options[i].classList.remove("wrong-answer");
+    options[i].classList.remove("hidden");
     options[i].classList.add("options");
     // Restore visibility (in case 50/50 was used)
     options[i].style.visibility = "visible";

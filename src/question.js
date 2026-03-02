@@ -26,12 +26,41 @@ import {
   handleAnswer
 } from "./answer.js";
 
+// ==== Buttons ==== //
+import {
+  showChoiceBtn
+} from "./button.js";
+
 // ==== Get audio boolean from localStorage ==== //
 let playAudio = JSON.parse(localStorage.getItem('playAudio'));
 
 // ==== Get question from localStorage if any exist ==== //
 let currentQuestion = JSON.parse(localStorage.getItem('currentQuestion'));
 let selectedGameSet = null;
+let revealedChoicesCount = 0;
+
+// ===================================== //
+// ==== Reveal Choices One by One ==== //
+// =================================== //
+function revealNextChoice() {
+  const options = [
+    document.getElementById("option-one"),
+    document.getElementById("option-two"),
+    document.getElementById("option-three"),
+    document.getElementById("option-four")
+  ];
+  
+  if (revealedChoicesCount < 4) {
+    // Show the next hidden option
+    options[revealedChoicesCount].classList.remove("hidden");
+    revealedChoicesCount++;
+    
+    // Hide button when all 4 are shown
+    if (revealedChoicesCount >= 4) {
+      showChoiceBtn.classList.add("hidden");
+    }
+  }
+}
 
 // =================================================== //
 // ==== This function displays the next question ==== //
@@ -141,6 +170,21 @@ function displayQuestion(questionObject) {
   option4.innerHTML = `
     <span class="text-orange font-bold mr-1">D:</span>
     <span>${questionObject.content[3]}</span>`;
+
+  // Hide all options initially
+  const allOptions = [option1, option2, option3, option4];
+  allOptions.forEach(option => {
+    option.classList.add("hidden");
+  });
+  
+  // Reset revealed choices counter
+  revealedChoicesCount = 0;
+  
+  // Show the "Show Choice" button
+  showChoiceBtn.classList.remove("hidden");
+  
+  // Remove old event listener and add new one
+  showChoiceBtn.onclick = revealNextChoice;
 
   // prepare options for click
   let options = document.getElementsByClassName("options");

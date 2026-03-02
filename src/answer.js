@@ -34,6 +34,7 @@ import {
 
 // ==== Buttons ==== //
 import {
+  showChoiceBtn,
   revealAnswerBtn,
   nextQuestionBtn,
   newGameBtn
@@ -73,6 +74,9 @@ function handleAnswer(e) {
     selectedAnswerAudio.play();
   }
   options[selectedAnswerIndex].classList.add("selected-answer");
+  
+  // Hide Show Choice button when answer is selected
+  showChoiceBtn.classList.add("hidden");
 
   // Show reveal answer button
   revealAnswerBtn.classList.remove("hidden");

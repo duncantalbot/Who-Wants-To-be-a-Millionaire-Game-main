@@ -16,6 +16,7 @@ const audioBtnControl = document.querySelector(".audio-control");
 // ================================== //
 // ==== Get Game Control Buttons ==== //
 // ================================ //
+const showChoiceBtn = document.getElementById("show-choice-btn");
 const revealAnswerBtn = document.getElementById("reveal-answer-btn");
 const nextQuestionBtn = document.getElementById("next-question-btn");
 const newGameBtn = document.getElementById("new-game-btn");
@@ -23,6 +24,7 @@ const newGameBtn = document.getElementById("new-game-btn");
 export {
   letsPlayBtn,
   audioBtnControl,
+  showChoiceBtn,
   revealAnswerBtn,
   nextQuestionBtn,
   newGameBtn
