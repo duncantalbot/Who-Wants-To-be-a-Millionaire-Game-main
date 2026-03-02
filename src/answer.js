@@ -9,7 +9,17 @@ import {
   letsPlayAudio,
   selectedAnswerAudio,
   correctAnswerAudio,
-  wrongAnswerAudio
+  wrongAnswerAudio,
+  win2000Audio,
+  win4000Audio,
+  win8000Audio,
+  win16000Audio,
+  win32000Audio,
+  win64000Audio,
+  win125000Audio,
+  win250000Audio,
+  win500000Audio,
+  win1000000Audio
 } from "./audio.js";
 
 import {
@@ -115,10 +125,47 @@ function revealAnswer() {
     // Correct answer
     options[selectedAnswerIndex].classList.remove("selected-answer");
     options[selectedAnswerIndex].classList.add("correct-answer");
-    if (playAudio) correctAnswerAudio.play();
     
     // Check if this was the last question
     let questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
+    
+    // Play appropriate audio based on question
+    if (playAudio) {
+      switch(questionNumber) {
+        case 6:  // $2,000
+          win2000Audio.play();
+          break;
+        case 7:  // $4,000
+          win4000Audio.play();
+          break;
+        case 8:  // $8,000
+          win8000Audio.play();
+          break;
+        case 9:  // $16,000
+          win16000Audio.play();
+          break;
+        case 10: // $32,000
+          win32000Audio.play();
+          break;
+        case 11: // $64,000
+          win64000Audio.play();
+          break;
+        case 12: // $125,000
+          win125000Audio.play();
+          break;
+        case 13: // $250,000
+          win250000Audio.play();
+          break;
+        case 14: // $500,000
+          win500000Audio.play();
+          break;
+        case 15: // $1,000,000
+          win1000000Audio.play();
+          break;
+        default:
+          correctAnswerAudio.play();
+      }
+    }
     
     if (questionNumber >= 15) {
       // Player won - show new game button

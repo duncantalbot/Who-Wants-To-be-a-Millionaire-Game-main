@@ -5,6 +5,16 @@
 // ==== Audios/Sounds ==== //
 import {
   letsPlayAudio,
+  question2000Audio,
+  question4000Audio,
+  question8000Audio,
+  question16000Audio,
+  question32000Audio,
+  question64000Audio,
+  question125000Audio,
+  question250000Audio,
+  question500000Audio,
+  question1000000Audio,
 } from "./audio.js";
 
 // ==== Game State Functions ==== //
@@ -29,7 +39,70 @@ let selectedGameSet = null;
 async function displayNextQuestion() {
   // console.log("🚀 ~ displayNextQuestion is running", displayNextQuestion);
   resetState();
-  if (playAudio) letsPlayAudio.play();
+  
+  // Get current question number
+  const questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
+  
+  // Play appropriate audio based on question number
+  if (playAudio) {
+    // Stop all audio first
+    const allAudios = [
+      letsPlayAudio, 
+      question2000Audio, 
+      question4000Audio, 
+      question8000Audio,
+      question16000Audio,
+      question32000Audio,
+      question64000Audio,
+      question125000Audio,
+      question250000Audio,
+      question500000Audio,
+      question1000000Audio
+    ];
+    
+    allAudios.forEach(audio => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+    
+    // Play appropriate audio for question
+    switch(questionNumber) {
+      case 6:  // $2,000
+        question2000Audio.play();
+        break;
+      case 7:  // $4,000
+        question4000Audio.play();
+        break;
+      case 8:  // $8,000
+        question8000Audio.play();
+        break;
+      case 9:  // $16,000
+        question16000Audio.play();
+        break;
+      case 10: // $32,000
+        question32000Audio.play();
+        break;
+      case 11: // $64,000
+        question64000Audio.play();
+        break;
+      case 12: // $125,000
+        question125000Audio.play();
+        break;
+      case 13: // $250,000
+        question250000Audio.play();
+        break;
+      case 14: // $500,000
+        question500000Audio.play();
+        break;
+      case 15: // $1,000,000
+        question1000000Audio.play();
+        break;
+      default:
+        letsPlayAudio.play();
+    }
+  }
   
   const question = await getNextQuestion();
   currentQuestion = question;
