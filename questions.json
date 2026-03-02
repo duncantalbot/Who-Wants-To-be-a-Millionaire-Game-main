@@ -1,0 +1,320 @@
+{
+  "games": [
+    {
+      "questions": [
+        {
+          "question": "What is the capital of France?",
+          "content": ["London", "Berlin", "Paris", "Madrid"],
+          "correct": "2"
+        },
+        {
+          "question": "How many continents are there?",
+          "content": ["5", "6", "7", "8"],
+          "correct": "2"
+        },
+        {
+          "question": "What color is the sky on a clear day?",
+          "content": ["Green", "Blue", "Red", "Yellow"],
+          "correct": "1"
+        },
+        {
+          "question": "How many days are in a week?",
+          "content": ["5", "6", "7", "8"],
+          "correct": "2"
+        },
+        {
+          "question": "What is 2 + 2?",
+          "content": ["3", "4", "5", "6"],
+          "correct": "1"
+        },
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "content": ["Venus", "Jupiter", "Mars", "Saturn"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "content": ["Atlantic", "Indian", "Arctic", "Pacific"],
+          "correct": "3"
+        },
+        {
+          "question": "How many sides does a triangle have?",
+          "content": ["2", "3", "4", "5"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the smallest prime number?",
+          "content": ["0", "1", "2", "3"],
+          "correct": "2"
+        },
+        {
+          "question": "Which gas do plants absorb from the atmosphere?",
+          "content": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the freezing point of water in Celsius?",
+          "content": ["-10°C", "0°C", "10°C", "100°C"],
+          "correct": "1"
+        },
+        {
+          "question": "How many legs does a spider have?",
+          "content": ["6", "8", "10", "12"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the capital of Japan?",
+          "content": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
+          "correct": "2"
+        },
+        {
+          "question": "Which element has the chemical symbol 'O'?",
+          "content": ["Gold", "Oxygen", "Silver", "Iron"],
+          "correct": "1"
+        },
+        {
+          "question": "How many hours are in a day?",
+          "content": ["12", "20", "24", "30"],
+          "correct": "2"
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "question": "Who painted the Mona Lisa?",
+          "content": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the largest country by area?",
+          "content": ["Canada", "China", "USA", "Russia"],
+          "correct": "3"
+        },
+        {
+          "question": "In what year did World War II end?",
+          "content": ["1943", "1944", "1945", "1946"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the speed of light?",
+          "content": ["299,792 km/s", "150,000 km/s", "500,000 km/s", "1,000,000 km/s"],
+          "correct": "0"
+        },
+        {
+          "question": "Which vitamin is produced when skin is exposed to sunlight?",
+          "content": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+          "correct": "3"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "content": ["Gold", "Iron", "Diamond", "Platinum"],
+          "correct": "2"
+        },
+        {
+          "question": "How many bones are in the human body?",
+          "content": ["186", "206", "226", "246"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the largest mammal in the world?",
+          "content": ["African Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
+          "correct": "1"
+        },
+        {
+          "question": "Who wrote 'Romeo and Juliet'?",
+          "content": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the currency of the United Kingdom?",
+          "content": ["Euro", "Dollar", "Pound Sterling", "Franc"],
+          "correct": "2"
+        },
+        {
+          "question": "How many strings does a standard guitar have?",
+          "content": ["4", "5", "6", "7"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the boiling point of water?",
+          "content": ["90°C", "95°C", "100°C", "105°C"],
+          "correct": "2"
+        },
+        {
+          "question": "Which planet is closest to the Sun?",
+          "content": ["Venus", "Earth", "Mercury", "Mars"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the square root of 144?",
+          "content": ["10", "11", "12", "13"],
+          "correct": "2"
+        },
+        {
+          "question": "How many Olympic rings are there?",
+          "content": ["4", "5", "6", "7"],
+          "correct": "1"
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "question": "What is the chemical formula for water?",
+          "content": ["H2O", "CO2", "O2", "H2SO4"],
+          "correct": "0"
+        },
+        {
+          "question": "Who was the first person to walk on the moon?",
+          "content": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the smallest country in the world?",
+          "content": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+          "correct": "1"
+        },
+        {
+          "question": "How many teeth does an adult human have?",
+          "content": ["28", "30", "32", "34"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the main ingredient in guacamole?",
+          "content": ["Tomato", "Avocado", "Pepper", "Onion"],
+          "correct": "1"
+        },
+        {
+          "question": "Which is the longest river in the world?",
+          "content": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+          "correct": "1"
+        },
+        {
+          "question": "What year did the Titanic sink?",
+          "content": ["1910", "1911", "1912", "1913"],
+          "correct": "2"
+        },
+        {
+          "question": "How many players are on a soccer team?",
+          "content": ["9", "10", "11", "12"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the largest organ in the human body?",
+          "content": ["Heart", "Liver", "Skin", "Brain"],
+          "correct": "2"
+        },
+        {
+          "question": "Who invented the telephone?",
+          "content": ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Guglielmo Marconi"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the tallest mountain in the world?",
+          "content": ["K2", "Kilimanjaro", "Mount Everest", "Denali"],
+          "correct": "2"
+        },
+        {
+          "question": "How many keys are on a standard piano?",
+          "content": ["76", "82", "88", "94"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "content": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+          "correct": "2"
+        },
+        {
+          "question": "Which blood type is known as the universal donor?",
+          "content": ["A", "B", "AB", "O"],
+          "correct": "3"
+        },
+        {
+          "question": "How many seconds are in an hour?",
+          "content": ["1,800", "2,400", "3,000", "3,600"],
+          "correct": "3"
+        }
+      ]
+    },
+    {
+      "questions": [
+        {
+          "question": "What is the largest desert in the world?",
+          "content": ["Sahara", "Arabian", "Gobi", "Antarctic"],
+          "correct": "3"
+        },
+        {
+          "question": "How many chambers does the human heart have?",
+          "content": ["2", "3", "4", "5"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the national animal of China?",
+          "content": ["Tiger", "Dragon", "Giant Panda", "Lion"],
+          "correct": "2"
+        },
+        {
+          "question": "Who painted 'The Starry Night'?",
+          "content": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dali"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the smallest unit of life?",
+          "content": ["Atom", "Molecule", "Cell", "Tissue"],
+          "correct": "2"
+        },
+        {
+          "question": "How many planets are in our solar system?",
+          "content": ["7", "8", "9", "10"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the capital of Canada?",
+          "content": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+          "correct": "3"
+        },
+        {
+          "question": "Which gas makes up most of Earth's atmosphere?",
+          "content": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+          "correct": "1"
+        },
+        {
+          "question": "How many years are in a century?",
+          "content": ["50", "75", "100", "150"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the largest planet in our solar system?",
+          "content": ["Saturn", "Jupiter", "Neptune", "Uranus"],
+          "correct": "1"
+        },
+        {
+          "question": "Who wrote 'Harry Potter'?",
+          "content": ["J.R.R. Tolkien", "C.S. Lewis", "J.K. Rowling", "Roald Dahl"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the freezing point of water in Fahrenheit?",
+          "content": ["0°F", "32°F", "64°F", "100°F"],
+          "correct": "1"
+        },
+        {
+          "question": "How many sides does a hexagon have?",
+          "content": ["5", "6", "7", "8"],
+          "correct": "1"
+        },
+        {
+          "question": "What is the symbol for gold on the periodic table?",
+          "content": ["Go", "Gd", "Au", "Ag"],
+          "correct": "2"
+        },
+        {
+          "question": "How many minutes are in 3 hours?",
+          "content": ["150", "160", "170", "180"],
+          "correct": "3"
+        }
+      ]
+    }
+  ]
+}

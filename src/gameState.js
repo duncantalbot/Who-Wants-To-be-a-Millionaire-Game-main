@@ -1,0 +1,127 @@
+// ====================================================== //
+// ==== This file contains all game state functions  === //
+// ==================================================== //
+
+// ==== Audios/Sounds ==== //
+import {
+  letsPlayAudio,
+} from "./audio.js";
+
+// ==== Pages/Sections ==== //
+import {
+  welcomeSection,
+  questionSection
+} from "./page.js";
+
+// ==== Buttons ==== //
+import {
+  letsPlayBtn
+} from "./button.js";
+
+// ==== Question Function ==== //
+import {
+  displayNextQuestion
+} from "./question.js";
+
+// ==== Lifeline Functions ==== //
+import {
+  resetLifelines
+} from "./lifeline.js";
+
+
+
+// ============================== //
+// ==== Start Game Function ==== //
+// ============================ //
+function startGame() {
+  // console.log("🚀 ~ startGame is starting", startGame);
+  letsPlayAudio.play();
+  welcomeSection.classList.replace("h-screen", "h-0");
+  letsPlayBtn.style.display = "none";
+  questionSection.style.display = "flex";
+  resetLifelines();
+  // Initialize question counter
+  localStorage.setItem('questionNumber', '1');
+  updateMoneyLadder(1);
+  displayNextQuestion();
+}
+
+// ============================ //
+// ==== End Game Function ==== //
+// ========================== //
+function endGame() {
+  console.log("🚀 ~ endGame is running", endGame);
+  // console.log("The game is over");
+}
+
+// =============================== //
+// ==== Reset State Function ==== //
+// ============================= //
+function resetState() {
+  // ==== Clear options ==== //
+  let options = document.getElementsByClassName("options");
+  for (let i = 0; i < options.length; i++) {
+    options[i].classList.remove("selected-answer");
+    options[i].classList.remove("correct-answer");
+    options[i].classList.remove("wrong-answer");
+    options[i].classList.add("options");
+    // Restore visibility (in case 50/50 was used)
+    options[i].style.visibility = "visible";
+    options[i].style.pointerEvents = "auto";
+  }
+  
+  // Hide game control buttons
+  const revealBtn = document.getElementById("reveal-answer-btn");
+  const nextBtn = document.getElementById("next-question-btn");
+  const newGameButtonElem = document.getElementById("new-game-btn");
+  if (revealBtn) revealBtn.classList.add("hidden");
+  if (nextBtn) nextBtn.classList.add("hidden");
+  if (newGameButtonElem) newGameButtonElem.classList.add("hidden");
+}
+
+// ===================================== //
+// ==== Update Money Ladder Display ==== //
+// ===================================== //
+function updateMoneyLadder(questionNumber) {
+  // Get all money list items
+  const moneyItems = document.querySelectorAll('.text-right.text-orange li');
+  
+  // Remove money-active class from all items
+  moneyItems.forEach(item => {
+    item.classList.remove('money-active');
+  });
+  
+  // Add money-active to current question (list is reversed, so 15-questionNumber)
+  // Question 1 = index 14, Question 2 = index 13, etc.
+  if (questionNumber >= 1 && questionNumber <= 15) {
+    const activeIndex = 15 - questionNumber;
+    moneyItems[activeIndex].classList.add('money-active');
+  }
+}
+
+// ======================================== //
+// ==== Increment Question Counter ==== //
+// ====================================== //
+function nextQuestion() {
+  let questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
+  questionNumber++;
+  
+  if (questionNumber > 15) {
+    // Player won the game!
+    console.log("🎉 Congratulations! You've won the game!");
+    // Could add a win screen here
+    return false;
+  }
+  
+  localStorage.setItem('questionNumber', questionNumber.toString());
+  updateMoneyLadder(questionNumber);
+  return true;
+}
+
+export {
+  startGame,
+  endGame,
+  resetState,
+  updateMoneyLadder,
+  nextQuestion
+}
