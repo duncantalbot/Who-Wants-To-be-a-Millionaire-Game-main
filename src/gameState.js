@@ -84,7 +84,7 @@ function resetState() {
 // ===================================== //
 function updateMoneyLadder(questionNumber) {
   // Get all money list items
-  const moneyItems = document.querySelectorAll('.text-right.text-orange li');
+  const moneyItems = document.querySelectorAll('.text-orange li');
   
   // Remove money-active class from all items
   moneyItems.forEach(item => {
@@ -95,7 +95,9 @@ function updateMoneyLadder(questionNumber) {
   // Question 1 = index 14, Question 2 = index 13, etc.
   if (questionNumber >= 1 && questionNumber <= 15) {
     const activeIndex = 15 - questionNumber;
-    moneyItems[activeIndex].classList.add('money-active');
+    if (moneyItems[activeIndex]) {
+      moneyItems[activeIndex].classList.add('money-active');
+    }
   }
 }
 

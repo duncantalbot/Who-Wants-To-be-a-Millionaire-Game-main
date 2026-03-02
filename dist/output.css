@@ -882,6 +882,7 @@ ol[reversed] li {
 
 ol[reversed] li::marker {
   font-weight: bold;
+  color: #f97316;
 }
 
 /* @layer components {
