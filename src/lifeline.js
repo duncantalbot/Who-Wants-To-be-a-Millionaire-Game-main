@@ -2,12 +2,6 @@
 // ==== This file contains all lifeline functions  === //
 // ================================================== //
 
-// ==== Audio/Sounds ==== //
-import {
-  phoneFriendAudio,
-  askAudienceAudio
-} from "./audio.js";
-
 // ==== Track which lifelines have been used ==== //
 let lifelinesUsed = {
   fiftyFifty: false,
@@ -76,14 +70,6 @@ function usePhoneAFriend() {
     return;
   }
 
-  // Get audio boolean from localStorage
-  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
-  
-  // Play phone a friend sound
-  if (playAudio) {
-    phoneFriendAudio.play();
-  }
-
   // Show "Ringing..." text
   phoneText.classList.remove("hidden");
 
@@ -99,14 +85,6 @@ function usePhoneAFriend() {
 function useAskAudience() {
   if (lifelinesUsed.askAudience) {
     return;
-  }
-
-  // Get audio boolean from localStorage
-  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
-  
-  // Play ask audience sound
-  if (playAudio) {
-    askAudienceAudio.play();
   }
 
   // Show "Polling..." text
