@@ -86,16 +86,23 @@ function updateMoneyLadder(questionNumber) {
   // Get all money list items
   const moneyItems = document.querySelectorAll('.text-orange li');
   
+  // Safety check - if no items found, exit
+  if (!moneyItems || moneyItems.length === 0) {
+    return;
+  }
+  
   // Remove money-active class from all items
   moneyItems.forEach(item => {
-    item.classList.remove('money-active');
+    if (item && item.classList) {
+      item.classList.remove('money-active');
+    }
   });
   
   // Add money-active to current question (list is reversed, so 15-questionNumber)
   // Question 1 = index 14, Question 2 = index 13, etc.
   if (questionNumber >= 1 && questionNumber <= 15) {
     const activeIndex = 15 - questionNumber;
-    if (moneyItems[activeIndex]) {
+    if (moneyItems[activeIndex] && moneyItems[activeIndex].classList) {
       moneyItems[activeIndex].classList.add('money-active');
     }
   }
