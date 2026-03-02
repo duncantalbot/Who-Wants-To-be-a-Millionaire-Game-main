@@ -57,9 +57,12 @@ ol[reversed] {
   list-style-position: inside;
 }
 
+ol[reversed] li {
+  text-align: right;
+}
+
 ol[reversed] li::marker {
   font-weight: bold;
-  margin-right: 8px;
 }
 
 /* @layer components {

@@ -754,20 +754,8 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .font-roboto {
@@ -888,9 +876,12 @@ ol[reversed] {
   list-style-position: inside;
 }
 
+ol[reversed] li {
+  text-align: right;
+}
+
 ol[reversed] li::marker {
   font-weight: bold;
-  margin-right: 8px;
 }
 
 /* @layer components {
