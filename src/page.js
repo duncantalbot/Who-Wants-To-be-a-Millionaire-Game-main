@@ -13,7 +13,19 @@ const welcomeSection = document.querySelector(".welcome-container");
 // ===================================== //
 const questionSection = document.querySelector(".question-container");
 
+// ======================================= //
+// ==== Get Question Area (Q & Choices) = //
+// ===================================== //
+const questionArea = document.querySelector("#question-area");
+
+// ======================================= //
+// ==== Get Money Ladder Container ====== //
+// ===================================== //
+const moneyLadderContainer = document.querySelector("#money-ladder-container");
+
 export {
   welcomeSection,
-  questionSection
+  questionSection,
+  questionArea,
+  moneyLadderContainer
 }

@@ -29,7 +29,8 @@ import {
 // ==== Game State Functions ==== //
 import {
   endGame,
-  nextQuestion
+  nextQuestion,
+  updateMoneyLadder
 } from "./gameState.js";
 
 // ==== Buttons ==== //
@@ -171,6 +172,13 @@ function revealAnswer() {
       }
     }
     
+    // Update money ladder immediately when answer is correct
+    if (questionNumber < 15) {
+      questionNumber++;
+      localStorage.setItem('questionNumber', questionNumber.toString());
+      updateMoneyLadder(questionNumber);
+    }
+    
     if (questionNumber >= 15) {
       // Player won - show new game button
       setTimeout(() => {
@@ -197,16 +205,21 @@ function handleNextQuestion() {
   wrongAnswerAudio.pause();
   wrongAnswerAudio.currentTime = 0;
   
-  // Move to next question level
-  const canContinue = nextQuestion();
-  if (canContinue) {
-    // Reset state
-    selectedAnswerIndex = null;
-    isAnswerRevealed = false;
-    nextQuestionBtn.classList.add("hidden");
-    enableOptions();
-    displayNextQuestion();
+  // Question number already incremented in revealAnswer, just load next question
+  let questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
+  
+  if (questionNumber > 15) {
+    // Player won the game!
+    console.log("🎉 Congratulations! You've won the game!");
+    return;
   }
+  
+  // Reset state
+  selectedAnswerIndex = null;
+  isAnswerRevealed = false;
+  nextQuestionBtn.classList.add("hidden");
+  enableOptions();
+  displayNextQuestion();
 }
 
 // ================================== //

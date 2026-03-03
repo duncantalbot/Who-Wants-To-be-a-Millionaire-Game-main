@@ -22,20 +22,24 @@
     />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
-    <script defer type="module" src="src/index.js?v=13"></script>
+    <script defer type="module" src="src/index.js?v=26"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="dist/output.css?v=13" />
+    <link rel="stylesheet" href="dist/output.css?v=26" />
 
     <title>Who Wants to Be a Millionaire</title>
   </head>
 
-  <body class="font-roboto">
+  <body class="font-roboto overflow-hidden">
     <!-- Lifeline Audio -->
     <audio id="first-ping" src="audio/first-ping.mp3"></audio>
     <audio id="second-ping" src="audio/second-ping.mp3"></audio>
     <audio id="third-ping" src="audio/third-ping.mp3"></audio>
+    <audio id="lets-play-start-audio" src="audio/10 Let's Play Start.mp3"></audio>
     <audio loop id="lets-play-audio" src="audio/lets-play.mp3"></audio>
+    <audio id="lets-play-2000-audio" src="audio/13 Let's Play $2,000.mp3"></audio>
+    <audio id="lets-play-64000-audio" src="audio/38 Let's Play $64,000.mp3"></audio>
+    <audio id="lets-play-1000000-audio" src="audio/58 Let's Play $1,000,000.mp3"></audio>
     <audio id="selected-answer-audio" src="audio/selected-answer.mp3"></audio>
     <audio id="correct-answer-audio" src="audio/correct-answer.mp3"></audio>
     <audio id="wrong-answer-audio" src="audio/wrong-answer-audio.mp3"></audio>
@@ -70,7 +74,7 @@
     >
       <div class="flex flex-col items-center gap-4 my-8">
         <!-- Game Set Selector Dots -->
-        <div class="flex gap-3 items-center justify-center p-2">
+        <div id="game-selector-dots" class="flex gap-3 items-center justify-center p-2">
           <button data-game="0" class="game-dot w-5 h-5 rounded-full bg-orange-500 border-4 border-orange-500 hover:scale-110 transition-transform cursor-pointer shadow-lg"></button>
           <button data-game="1" class="game-dot w-5 h-5 rounded-full bg-gray-500 border-4 border-gray-500 hover:scale-110 transition-transform cursor-pointer shadow-lg"></button>
           <button data-game="2" class="game-dot w-5 h-5 rounded-full bg-gray-500 border-4 border-gray-500 hover:scale-110 transition-transform cursor-pointer shadow-lg"></button>
@@ -89,14 +93,12 @@
 
     <!--Actual Game -->
     <section
-      class="hidden question-container py-6 p-2 h-screen w-full text-white flex-col-reverse justify-start gap-2 sm:flex-col sm:justify-around sm:m-0 items-center bg-[url(../images/game-background.jpg)]"
+      class="hidden question-container p-2 h-screen w-full text-white flex items-start justify-center bg-[url(../images/game-background.jpg)] overflow-hidden"
     >
-      <!-- Money, lifelines -->
-
-      <div class="sm:w-4/5 flex sm:justify-between">
-        <div
-          class="lifelines flex items-center gap-6 sm:flex-col sm:justify-evenly"
-        >
+      <!-- Main Content Area (hidden initially) -->
+      <div id="money-ladder-container" class="hidden w-full flex justify-between items-start px-4 pt-8 gap-4">
+        <!-- Lifelines - Left -->
+        <div id="lifelines-container" class="flex flex-col items-center gap-8">
           <div id="fifty-fifty" class="hover:cursor-pointer">
             <img src="images/50-50.png" alt="" />
           </div>
@@ -105,22 +107,78 @@
             <img src="images/phone-a-friend.png" alt="" />
             <p id="phone-text" class="hidden text-white text-xs mt-1 font-bold">Ringing...</p>
           </div>
+          
           <div id="ask-the-audience" class="hover:cursor-pointer text-center">
             <img src="images/ask-the-audience.png" alt="" />
             <p id="audience-text" class="hidden text-white text-xs mt-1 font-bold">Polling...</p>
           </div>
+          
           <button class="audio-control text-5xl text-white">
             <i class="fas fa-volume-up hidden unmute"></i>
             <i class="fas fa-volume-mute mute"></i>
           </button>
         </div>
 
-        <div
-          class="hidden sm:block bg-blueCardBg rounded border-4 border-silverWhite"
-        >
+        <!-- Question and Choices - Center -->
+        <div id="question-area" class="flex-1 flex items-center justify-center px-8">
+          <div class="w-full">
+            <div
+              id="question-card"
+              class="rounded border-4 border-border p-3 bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-full my-2"
+            >
+              <p class="text-center text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
+                doloremque?
+              </p>
+            </div>
+            <!-- Options -->
+            <div
+              class="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-2 place-content-stretch w-full relative"
+            >
+              <div
+                data-id="0"
+                id="option-one"
+                class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+              >
+                <span class="text-orange font-bold mr-1">A:</span>
+                <span>Lorem</span>
+              </div>
+
+              <div
+                data-id="1"
+                id="option-two"
+                class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+              >
+                <span class="text-orange font-bold mr-1">B:</span>
+                <span>Ipsum</span>
+              </div>
+
+              <div
+                data-id="2"
+                id="option-three"
+                class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+              >
+                <span class="text-orange font-bold mr-1">C:</span>
+                <span>Dolor</span>
+              </div>
+
+              <div
+                data-id="3"
+                id="option-four"
+                class="options rounded border-4 border-border p-2 sm:p-3 w-full"
+              >
+                <span class="text-orange font-bold mr-1">D:</span>
+                <span>Sit amet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Money Ladder - Right -->
+        <div class="bg-blueCardBg rounded border-4 border-silverWhite">
           <ol
             reversed
-            class="text-orange text-base list-decimal font-medium p-2 px-4"
+            class="text-orange text-sm list-decimal font-medium p-1 px-3"
           >
             <li class="text-white font-bold">$1,000,000</li>
             <li>$500,000</li>
@@ -140,58 +198,6 @@
           </ol>
         </div>
       </div>
-
-      <!-- Question -->
-      <div class="w-4/5">
-        <div
-          id="question-card"
-          class="rounded border-4 border-border p-4 bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-full my-3"
-        >
-          <p class="text-center text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
-            doloremque?
-          </p>
-        </div>
-        <!-- Options -->
-        <div
-          class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 place-content-stretch w-full relative"
-        >
-          <div
-            data-id="0"
-            id="option-one"
-            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
-          >
-            <span class="text-orange font-bold mr-1">A:</span>
-            <span>Lorem</span>
-          </div>
-
-          <div
-            data-id="1"
-            id="option-two"
-            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
-          >
-            <span class="text-orange font-bold mr-1">B:</span>
-            <span>Ipsum</span>
-          </div>
-
-          <div
-            data-id="2"
-            id="option-three"
-            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
-          >
-            <span class="text-orange font-bold mr-1">C:</span>
-            <span>Dolor</span>
-          </div>
-
-          <div
-            data-id="3"
-            id="option-four"
-            class="options rounded border-4 border-border p-2 sm:p-3 w-full"
-          >
-            <span class="text-orange font-bold mr-1">D:</span>
-            <span>Sit amet</span>
-          </div>
-        </div>
 
         <!-- Game Control Buttons - Fixed Bottom Right -->
         <div class="fixed bottom-3 right-3 flex flex-col gap-1 z-50">

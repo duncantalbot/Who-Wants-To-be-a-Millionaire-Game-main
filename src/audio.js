@@ -6,7 +6,11 @@
 // ========================= //
 // ==== Get All Audios ==== //
 // ======================= //
+const letsPlayStartAudio = document.getElementById("lets-play-start-audio");
 const letsPlayAudio = document.getElementById("lets-play-audio");
+const letsPlay2000Audio = document.getElementById("lets-play-2000-audio");
+const letsPlay64000Audio = document.getElementById("lets-play-64000-audio");
+const letsPlay1000000Audio = document.getElementById("lets-play-1000000-audio");
 const selectedAnswerAudio = document.getElementById("selected-answer-audio");
 const correctAnswerAudio = document.getElementById("correct-answer-audio");
 const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
@@ -41,7 +45,11 @@ const askAudienceAudio = null;
 
 
 export {
+  letsPlayStartAudio,
   letsPlayAudio,
+  letsPlay2000Audio,
+  letsPlay64000Audio,
+  letsPlay1000000Audio,
   selectedAnswerAudio,
   correctAnswerAudio,
   wrongAnswerAudio,

@@ -4,7 +4,11 @@
 
 // ==== Audios/Sounds ==== //
 import {
+  letsPlayStartAudio,
   letsPlayAudio,
+  letsPlay2000Audio,
+  letsPlay64000Audio,
+  letsPlay1000000Audio,
   question2000Audio,
   question4000Audio,
   question8000Audio,
@@ -30,6 +34,11 @@ import {
 import {
   showChoiceBtn
 } from "./button.js";
+
+// ==== Page Sections ==== //
+import {
+  questionArea
+} from "./page.js";
 
 // ==== Get audio boolean from localStorage ==== //
 let playAudio = JSON.parse(localStorage.getItem('playAudio'));
@@ -72,11 +81,31 @@ async function displayNextQuestion() {
   // Get current question number
   const questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
   
-  // Play appropriate audio based on question number
-  if (playAudio) {
+  // Check if this is a milestone question that needs intro audio
+  const isMilestoneQuestion = questionNumber === 5 || questionNumber === 10 || questionNumber === 15;
+  
+  if (isMilestoneQuestion && playAudio) {
+    // Hide question area and show choice button while intro plays
+    questionArea.classList.add("hidden");
+    showChoiceBtn.classList.add("hidden");
+    
+    // Determine which intro audio to play
+    let introAudio;
+    if (questionNumber === 5) {
+      introAudio = letsPlay2000Audio;
+    } else if (questionNumber === 10) {
+      introAudio = letsPlay64000Audio;
+    } else if (questionNumber === 15) {
+      introAudio = letsPlay1000000Audio;
+    }
+    
     // Stop all audio first
     const allAudios = [
-      letsPlayAudio, 
+      letsPlayStartAudio,
+      letsPlayAudio,
+      letsPlay2000Audio,
+      letsPlay64000Audio,
+      letsPlay1000000Audio,
       question2000Audio, 
       question4000Audio, 
       question8000Audio,
@@ -95,6 +124,48 @@ async function displayNextQuestion() {
         audio.currentTime = 0;
       }
     });
+    
+    // Play intro audio and wait for it to finish
+    introAudio.play();
+    
+    // Wait for intro audio to finish before showing question
+    await new Promise((resolve) => {
+      introAudio.addEventListener('ended', resolve, { once: true });
+    });
+    
+    // Show question area after intro finishes
+    questionArea.classList.remove("hidden");
+  }
+  
+  // Play appropriate audio based on question number
+  if (playAudio) {
+    // Stop all audio first (if not already stopped)
+    if (!isMilestoneQuestion) {
+      const allAudios = [
+        letsPlayStartAudio,
+        letsPlayAudio,
+        letsPlay2000Audio,
+        letsPlay64000Audio,
+        letsPlay1000000Audio,
+        question2000Audio, 
+        question4000Audio, 
+        question8000Audio,
+        question16000Audio,
+        question32000Audio,
+        question64000Audio,
+        question125000Audio,
+        question250000Audio,
+        question500000Audio,
+        question1000000Audio
+      ];
+      
+      allAudios.forEach(audio => {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    }
     
     // Play appropriate audio for question
     switch(questionNumber) {

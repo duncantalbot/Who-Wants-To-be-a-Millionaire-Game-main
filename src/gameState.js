@@ -4,13 +4,15 @@
 
 // ==== Audios/Sounds ==== //
 import {
+  letsPlayStartAudio,
   letsPlayAudio,
 } from "./audio.js";
 
 // ==== Pages/Sections ==== //
 import {
   welcomeSection,
-  questionSection
+  questionSection,
+  moneyLadderContainer
 } from "./page.js";
 
 // ==== Buttons ==== //
@@ -35,15 +37,44 @@ import {
 // ============================ //
 function startGame() {
   // console.log("🚀 ~ startGame is starting", startGame);
-  letsPlayAudio.play();
+  
+  // Get audio boolean from localStorage
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  
+  // Play Let's Play Start audio
+  if (playAudio) {
+    letsPlayStartAudio.play();
+  }
+  
   welcomeSection.classList.replace("h-screen", "h-0");
   letsPlayBtn.style.display = "none";
   questionSection.style.display = "flex";
+  
+  // Hide game selector dots when game starts
+  const gameSelectorDots = document.getElementById("game-selector-dots");
+  if (gameSelectorDots) {
+    gameSelectorDots.style.display = "none";
+  }
+  
+  // Hide money ladder container (which contains everything) initially - show after Let's Play Start audio finishes
+  moneyLadderContainer.classList.add("hidden");
+  
   resetLifelines();
   // Initialize question counter
   localStorage.setItem('questionNumber', '1');
   updateMoneyLadder(1);
-  displayNextQuestion();
+  
+  // Wait for Let's Play Start audio to finish before showing first question
+  if (playAudio) {
+    letsPlayStartAudio.addEventListener('ended', function() {
+      moneyLadderContainer.classList.remove("hidden");
+      displayNextQuestion();
+    }, { once: true }); // Use once: true to auto-remove listener
+  } else {
+    // If audio is muted, show question immediately
+    moneyLadderContainer.classList.remove("hidden");
+    displayNextQuestion();
+  }
 }
 
 // ============================ //
