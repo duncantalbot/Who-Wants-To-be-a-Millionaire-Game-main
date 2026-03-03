@@ -8,11 +8,6 @@
 // =================================================== //
 const letsPlayBtn = document.getElementById("lets-play");
 
-// ========================================= //
-// ==== Get Audio/Sound Control Button ==== //
-// ======================================= //
-const audioBtnControl = document.querySelector(".audio-control");
-
 // ================================== //
 // ==== Get Game Control Buttons ==== //
 // ================================ //
@@ -24,7 +19,6 @@ const skipMilestoneBtn = document.getElementById("skip-milestone-btn");
 
 export {
   letsPlayBtn,
-  audioBtnControl,
   showChoiceBtn,
   revealAnswerBtn,
   nextQuestionBtn,

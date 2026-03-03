@@ -50,7 +50,6 @@ import {
 // ==== Get Buttons ===== //
 import {
   letsPlayBtn,
-  audioBtnControl,
   revealAnswerBtn,
   nextQuestionBtn,
   newGameBtn
@@ -82,9 +81,8 @@ import {
 } from "./lifeline.js";
 
 
-// ==== Initialize boolean for audio control ==== //
-let playAudio = true;
-localStorage.setItem('playAudio', JSON.stringify(playAudio));
+// ==== Initialize boolean for audio control (always enabled) ==== //
+localStorage.setItem('playAudio', JSON.stringify(true));
 
 // ==== Initialize selected game index (default to 0) ==== //
 let selectedGameIndex = 0;
@@ -133,77 +131,6 @@ const startQuestionBtn = document.getElementById("start-question-btn");
 if (startQuestionBtn) {
   startQuestionBtn.addEventListener("click", startQuestion);
 }
-
-
-// ======================== //
-// ==== Control Audio ==== //
-// ====================== //
-let mute = document.querySelector(".mute");
-let unmute = document.querySelector(".unmute");
-
-audioBtnControl.addEventListener("click", () => {
-  // ==== Get audio boolean from localStorage ==== //
-  playAudio = JSON.parse(localStorage.getItem('playAudio'));
-  
-  // ==== Toggle/Revert/Change audio boolean ==== //
-  playAudio = !playAudio
-
-  // ==== Save toggled/reverted/changed audio boolean to localStorage ==== //
-  localStorage.setItem('playAudio', JSON.stringify(playAudio));
-
-  if (playAudio) {
-    // Unmute - just show the unmute icon, don't start any audio
-    unmute.classList.add("hidden");
-    mute.classList.remove("hidden");
-  } else {
-    // Mute - stop all currently playing audio
-    const allAudios = [
-      letsPlayStartAudio,
-      letsPlayAudio,
-      letsPlay2000Audio,
-      letsPlay64000Audio,
-      letsPlay1000000Audio,
-      selectedAnswerAudio,
-      correctAnswerAudio,
-      correctQ1Q4Audio,
-      wrongAnswerAudio,
-      sayGoodbyeAudio,
-      question2000Audio,
-      question4000Audio,
-      question8000Audio,
-      question16000Audio,
-      question32000Audio,
-      question64000Audio,
-      question125000Audio,
-      question250000Audio,
-      question500000Audio,
-      question1000000Audio,
-      win2000Audio,
-      win4000Audio,
-      win8000Audio,
-      win16000Audio,
-      win32000Audio,
-      win64000Audio,
-      win125000Audio,
-      win250000Audio,
-      win500000Audio,
-      win1000000Audio,
-      fiftyFiftyAudio,
-      phoneFriendAudio,
-      askAudienceAudio
-    ];
-    
-    allAudios.forEach(audio => {
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    });
-    
-    unmute.classList.remove("hidden");
-    mute.classList.add("hidden");
-  }
-});
 
 
 // =============================== //
