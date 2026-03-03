@@ -2,6 +2,48 @@
 // ==== This file contains all lifeline functions  === //
 // ================================================== //
 
+// ==== Import lifeline audio ==== //
+import {
+  fiftyFiftyAudio,
+  phoneFriendAudio,
+  askAudienceAudio,
+  letsPlayAudio,
+  question2000Audio,
+  question4000Audio,
+  question8000Audio,
+  question16000Audio,
+  question32000Audio,
+  question64000Audio,
+  question125000Audio,
+  question250000Audio,
+  question500000Audio,
+  question1000000Audio
+} from "./audio.js";
+
+// ==== Function to stop all background audio ==== //
+function stopBackgroundAudio() {
+  const backgroundAudios = [
+    letsPlayAudio,
+    question2000Audio,
+    question4000Audio,
+    question8000Audio,
+    question16000Audio,
+    question32000Audio,
+    question64000Audio,
+    question125000Audio,
+    question250000Audio,
+    question500000Audio,
+    question1000000Audio
+  ];
+  
+  backgroundAudios.forEach(audio => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+}
+
 // ==== Track which lifelines have been used ==== //
 let lifelinesUsed = {
   fiftyFifty: false,
@@ -55,6 +97,14 @@ function useFiftyFifty() {
     allOptions[index].style.visibility = "hidden";
     allOptions[index].style.pointerEvents = "none";
   });
+  
+  // Stop background audio and play 50-50 audio (looped)
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  if (playAudio && fiftyFiftyAudio) {
+    stopBackgroundAudio();
+    fiftyFiftyAudio.currentTime = 0;
+    fiftyFiftyAudio.play();
+  }
 
   // Mark as used and disable button
   lifelinesUsed.fiftyFifty = true;
@@ -72,6 +122,14 @@ function usePhoneAFriend() {
 
   // Show "Ringing..." text
   phoneText.classList.remove("hidden");
+  
+  // Stop background audio and play Phone-A-Friend audio (looped)
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  if (playAudio && phoneFriendAudio) {
+    stopBackgroundAudio();
+    phoneFriendAudio.currentTime = 0;
+    phoneFriendAudio.play();
+  }
 
   // Mark as used and disable button
   lifelinesUsed.phoneAFriend = true;
@@ -89,6 +147,14 @@ function useAskAudience() {
 
   // Show "Polling..." text
   audienceText.classList.remove("hidden");
+  
+  // Stop background audio and play Ask The Audience audio (looped)
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  if (playAudio && askAudienceAudio) {
+    stopBackgroundAudio();
+    askAudienceAudio.currentTime = 0;
+    askAudienceAudio.play();
+  }
 
   // Mark as used and disable button
   lifelinesUsed.askAudience = true;

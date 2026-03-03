@@ -14,6 +14,7 @@ const letsPlay1000000Audio = document.getElementById("lets-play-1000000-audio");
 const selectedAnswerAudio = document.getElementById("selected-answer-audio");
 const correctAnswerAudio = document.getElementById("correct-answer-audio");
 const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
+const sayGoodbyeAudio = document.getElementById("say-goodbye-audio");
 
 // Milestone Question Audio
 const question2000Audio = document.getElementById("question-2000-audio");
@@ -39,9 +40,10 @@ const win250000Audio = document.getElementById("win-250000-audio");
 const win500000Audio = document.getElementById("win-500000-audio");
 const win1000000Audio = document.getElementById("win-1000000-audio");
 
-// Phone and audience audio removed - lifelines now silent
-const phoneFriendAudio = null;
-const askAudienceAudio = null;
+// Lifeline audio
+const fiftyFiftyAudio = document.getElementById("fifty-fifty-audio");
+const phoneFriendAudio = document.getElementById("phone-friend-audio");
+const askAudienceAudio = document.getElementById("ask-audience-audio");
 
 
 export {
@@ -53,6 +55,7 @@ export {
   selectedAnswerAudio,
   correctAnswerAudio,
   wrongAnswerAudio,
+  sayGoodbyeAudio,
   question2000Audio,
   question4000Audio,
   question8000Audio,
@@ -73,6 +76,7 @@ export {
   win250000Audio,
   win500000Audio,
   win1000000Audio,
+  fiftyFiftyAudio,
   phoneFriendAudio,
   askAudienceAudio
 }

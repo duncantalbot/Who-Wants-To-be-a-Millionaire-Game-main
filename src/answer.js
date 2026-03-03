@@ -10,6 +10,10 @@ import {
   selectedAnswerAudio,
   correctAnswerAudio,
   wrongAnswerAudio,
+  sayGoodbyeAudio,
+  fiftyFiftyAudio,
+  phoneFriendAudio,
+  askAudienceAudio,
   win2000Audio,
   win4000Audio,
   win8000Audio,
@@ -73,6 +77,20 @@ function handleAnswer(e) {
   if (playAudio) {
     letsPlayAudio.pause();
     selectedAnswerAudio.play();
+    
+    // Stop lifeline audio when answer is locked in
+    if (fiftyFiftyAudio) {
+      fiftyFiftyAudio.pause();
+      fiftyFiftyAudio.currentTime = 0;
+    }
+    if (phoneFriendAudio) {
+      phoneFriendAudio.pause();
+      phoneFriendAudio.currentTime = 0;
+    }
+    if (askAudienceAudio) {
+      askAudienceAudio.pause();
+      askAudienceAudio.currentTime = 0;
+    }
   }
   options[selectedAnswerIndex].classList.add("selected-answer");
   
@@ -114,17 +132,26 @@ function revealAnswer() {
       "selected-answer",
       "wrong-answer"
     );
-    if (playAudio) wrongAnswerAudio.play();
     
     // Show correct answer
     options[currentAnswer].classList.add("correct-answer");
     
+    // Disable all options
+    disableOptions();
+    
+    if (playAudio) {
+      // Play wrong answer audio first
+      wrongAnswerAudio.play();
+      
+      // Play Say Goodbye audio after wrong answer finishes
+      wrongAnswerAudio.addEventListener('ended', function() {
+        sayGoodbyeAudio.play();
+      }, { once: true });
+    }
+    
     // Show new game button
     revealAnswerBtn.classList.add("hidden");
     newGameBtn.classList.remove("hidden");
-    
-    // Disable all options
-    disableOptions();
     
   } else {
     // Correct answer
