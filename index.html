@@ -22,10 +22,10 @@
     />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
-    <script defer type="module" src="src/index.js?v=11"></script>
+    <script defer type="module" src="src/index.js?v=12"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="dist/output.css?v=11" />
+    <link rel="stylesheet" href="dist/output.css?v=12" />
 
     <title>Who Wants to Be a Millionaire</title>
   </head>
@@ -68,11 +68,22 @@
     <section
       class="welcome-container h-screen w-full flex items-center justify-center bg-[url(../images/welcome-background-mobile.jpg)] sm:bg-[url(../images/welcome-background-img.jpg)] sm:items-end"
     >
-      <div
-        id="lets-play"
-        class="rounded border border-border px-4 py-2 text-white font-semibold text-sm bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-auto my-8 hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md hover:cursor-pointer"
-      >
-        <p class="text-center text-sm">LET'S PLAY</p>
+      <div class="flex flex-col items-center gap-3 my-8">
+        <!-- Game Set Selector Dots -->
+        <div class="flex gap-2 items-center">
+          <button data-game="0" class="game-dot w-3 h-3 rounded-full bg-orange border-2 border-orange hover:scale-125 transition-transform"></button>
+          <button data-game="1" class="game-dot w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 hover:scale-125 transition-transform"></button>
+          <button data-game="2" class="game-dot w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 hover:scale-125 transition-transform"></button>
+          <button data-game="3" class="game-dot w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 hover:scale-125 transition-transform"></button>
+        </div>
+        
+        <!-- Let's Play Button -->
+        <div
+          id="lets-play"
+          class="rounded border border-border px-4 py-2 text-white font-semibold text-sm bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue w-auto hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md hover:cursor-pointer"
+        >
+          <p class="text-center text-sm">LET'S PLAY</p>
+        </div>
       </div>
     </section>
 

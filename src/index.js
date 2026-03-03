@@ -52,6 +52,33 @@ import {
 let playAudio = true;
 localStorage.setItem('playAudio', JSON.stringify(playAudio));
 
+// ==== Initialize selected game index (default to 0) ==== //
+let selectedGameIndex = 0;
+localStorage.setItem('selectedGameIndex', selectedGameIndex.toString());
+
+// ==== Handle Game Selector Dots ==== //
+const gameDots = document.querySelectorAll('.game-dot');
+gameDots.forEach((dot, index) => {
+  dot.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent triggering parent clicks
+    
+    // Remove active styling from all dots
+    gameDots.forEach(d => {
+      d.classList.remove('bg-orange', 'border-orange');
+      d.classList.add('bg-gray-400', 'border-gray-400');
+    });
+    
+    // Add active styling to clicked dot
+    dot.classList.remove('bg-gray-400', 'border-gray-400');
+    dot.classList.add('bg-orange', 'border-orange');
+    
+    // Store selected game index
+    selectedGameIndex = parseInt(dot.dataset.game);
+    localStorage.setItem('selectedGameIndex', selectedGameIndex.toString());
+    console.log(`Game ${selectedGameIndex + 1} selected`);
+  });
+});
+
 // ======================================================== //
 // === Start game when user clicks [Let's Play] button === //
 // ====================================================== //

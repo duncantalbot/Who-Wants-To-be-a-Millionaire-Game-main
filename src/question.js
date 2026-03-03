@@ -202,19 +202,13 @@ async function getNextQuestion() {
   const data = await getQuestions();
   const questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
   
-  // If starting a new game (question 1), pick next game set in sequence
+  // If starting a new game (question 1), use the manually selected game set
   if (questionNumber === 1 || !selectedGameSet) {
-    // Get the last used game set index from localStorage (default to -1 so first game is 0)
-    const lastGameIndex = parseInt(localStorage.getItem('lastGameIndex') ?? '-1');
+    // Get the selected game index from localStorage (set by game selector dots)
+    const gameIndex = parseInt(localStorage.getItem('selectedGameIndex') ?? '0');
     
-    // Move to next game set (with wrap around)
-    const nextGameIndex = (lastGameIndex + 1) % data.games.length;
-    
-    // Store the new game index
-    localStorage.setItem('lastGameIndex', nextGameIndex.toString());
-    
-    selectedGameSet = data.games[nextGameIndex];
-    console.log(`Selected game set ${nextGameIndex + 1} of ${data.games.length}`);
+    selectedGameSet = data.games[gameIndex];
+    console.log(`Playing game set ${gameIndex + 1} of ${data.games.length}`);
   }
   
   // Get the question at the current index (questionNumber - 1 because arrays are 0-indexed)
