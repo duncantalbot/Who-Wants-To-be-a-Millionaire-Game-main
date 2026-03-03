@@ -12,7 +12,39 @@
 
 // ==== Get Audios/Sounds ==== //
 import {
-  letsPlayAudio
+  letsPlayAudio,
+  letsPlayStartAudio,
+  letsPlay2000Audio,
+  letsPlay64000Audio,
+  letsPlay1000000Audio,
+  selectedAnswerAudio,
+  correctAnswerAudio,
+  correctQ1Q4Audio,
+  wrongAnswerAudio,
+  sayGoodbyeAudio,
+  question2000Audio,
+  question4000Audio,
+  question8000Audio,
+  question16000Audio,
+  question32000Audio,
+  question64000Audio,
+  question125000Audio,
+  question250000Audio,
+  question500000Audio,
+  question1000000Audio,
+  win2000Audio,
+  win4000Audio,
+  win8000Audio,
+  win16000Audio,
+  win32000Audio,
+  win64000Audio,
+  win125000Audio,
+  win250000Audio,
+  win500000Audio,
+  win1000000Audio,
+  fiftyFiftyAudio,
+  phoneFriendAudio,
+  askAudienceAudio
 } from "./audio.js";
 
 // ==== Get Buttons ===== //
@@ -120,11 +152,54 @@ audioBtnControl.addEventListener("click", () => {
   localStorage.setItem('playAudio', JSON.stringify(playAudio));
 
   if (playAudio) {
-    letsPlayAudio.play();
+    // Unmute - just show the unmute icon, don't start any audio
     unmute.classList.add("hidden");
     mute.classList.remove("hidden");
   } else {
-    letsPlayAudio.pause();
+    // Mute - stop all currently playing audio
+    const allAudios = [
+      letsPlayStartAudio,
+      letsPlayAudio,
+      letsPlay2000Audio,
+      letsPlay64000Audio,
+      letsPlay1000000Audio,
+      selectedAnswerAudio,
+      correctAnswerAudio,
+      correctQ1Q4Audio,
+      wrongAnswerAudio,
+      sayGoodbyeAudio,
+      question2000Audio,
+      question4000Audio,
+      question8000Audio,
+      question16000Audio,
+      question32000Audio,
+      question64000Audio,
+      question125000Audio,
+      question250000Audio,
+      question500000Audio,
+      question1000000Audio,
+      win2000Audio,
+      win4000Audio,
+      win8000Audio,
+      win16000Audio,
+      win32000Audio,
+      win64000Audio,
+      win125000Audio,
+      win250000Audio,
+      win500000Audio,
+      win1000000Audio,
+      fiftyFiftyAudio,
+      phoneFriendAudio,
+      askAudienceAudio
+    ];
+    
+    allAudios.forEach(audio => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+    
     unmute.classList.remove("hidden");
     mute.classList.add("hidden");
   }
