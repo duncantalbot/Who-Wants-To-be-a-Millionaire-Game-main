@@ -9,11 +9,22 @@ import {
   letsPlayAudio,
   selectedAnswerAudio,
   correctAnswerAudio,
+  correctQ1Q4Audio,
   wrongAnswerAudio,
   sayGoodbyeAudio,
   fiftyFiftyAudio,
   phoneFriendAudio,
   askAudienceAudio,
+  question2000Audio,
+  question4000Audio,
+  question8000Audio,
+  question16000Audio,
+  question32000Audio,
+  question64000Audio,
+  question125000Audio,
+  question250000Audio,
+  question500000Audio,
+  question1000000Audio,
   win2000Audio,
   win4000Audio,
   win8000Audio,
@@ -75,22 +86,32 @@ function handleAnswer(e) {
 
   // Highlight selected answer
   if (playAudio) {
-    letsPlayAudio.pause();
-    selectedAnswerAudio.play();
+    // Stop all background music when answer is locked in
+    const allBackgroundAudios = [
+      letsPlayAudio,
+      question2000Audio,
+      question4000Audio,
+      question8000Audio,
+      question16000Audio,
+      question32000Audio,
+      question64000Audio,
+      question125000Audio,
+      question250000Audio,
+      question500000Audio,
+      question1000000Audio,
+      fiftyFiftyAudio,
+      phoneFriendAudio,
+      askAudienceAudio
+    ];
     
-    // Stop lifeline audio when answer is locked in
-    if (fiftyFiftyAudio) {
-      fiftyFiftyAudio.pause();
-      fiftyFiftyAudio.currentTime = 0;
-    }
-    if (phoneFriendAudio) {
-      phoneFriendAudio.pause();
-      phoneFriendAudio.currentTime = 0;
-    }
-    if (askAudienceAudio) {
-      askAudienceAudio.pause();
-      askAudienceAudio.currentTime = 0;
-    }
+    allBackgroundAudios.forEach(audio => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+    
+    selectedAnswerAudio.play();
   }
   options[selectedAnswerIndex].classList.add("selected-answer");
   
@@ -164,6 +185,13 @@ function revealAnswer() {
     // Play appropriate audio based on question
     if (playAudio) {
       switch(questionNumber) {
+        case 1:  // Q1
+        case 2:  // Q2
+        case 3:  // Q3
+        case 4:  // Q4
+        case 5:  // Q5
+          correctQ1Q4Audio.play();
+          break;
         case 6:  // $2,000
           win2000Audio.play();
           break;
@@ -199,14 +227,11 @@ function revealAnswer() {
       }
     }
     
-    // Update money ladder immediately when answer is correct
-    if (questionNumber < 15) {
-      questionNumber++;
-      localStorage.setItem('questionNumber', questionNumber.toString());
-      updateMoneyLadder(questionNumber);
-    }
+    // Store the next question number but don't update ladder yet
+    questionNumber++;
+    localStorage.setItem('questionNumber', questionNumber.toString());
     
-    if (questionNumber >= 15) {
+    if (questionNumber > 15) {
       // Player won - show new game button
       setTimeout(() => {
         newGameBtn.classList.remove("hidden");
@@ -229,10 +254,12 @@ function handleNextQuestion() {
   // Stop any playing audio
   correctAnswerAudio.pause();
   correctAnswerAudio.currentTime = 0;
+  correctQ1Q4Audio.pause();
+  correctQ1Q4Audio.currentTime = 0;
   wrongAnswerAudio.pause();
   wrongAnswerAudio.currentTime = 0;
   
-  // Question number already incremented in revealAnswer, just load next question
+  // Question number already incremented in revealAnswer, now update the ladder
   let questionNumber = parseInt(localStorage.getItem('questionNumber')) || 1;
   
   if (questionNumber > 15) {
@@ -240,6 +267,9 @@ function handleNextQuestion() {
     console.log("🎉 Congratulations! You've won the game!");
     return;
   }
+  
+  // Update money ladder before showing next question
+  updateMoneyLadder(questionNumber);
   
   // Reset state
   selectedAnswerIndex = null;

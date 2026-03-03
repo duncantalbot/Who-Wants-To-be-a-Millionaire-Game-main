@@ -27,6 +27,8 @@ import {
 // ==== Get Games State Functions ==== //
 import {
   startGame,
+  skipIntro,
+  startQuestion,
   endGame
 } from "./gameState.js";
 
@@ -83,6 +85,22 @@ gameDots.forEach((dot, index) => {
 // === Start game when user clicks [Let's Play] button === //
 // ====================================================== //
 letsPlayBtn.addEventListener("click", startGame);
+
+// ======================================================== //
+// === Skip intro when user clicks Skip Intro button ===== //
+// ====================================================== //
+const skipIntroBtn = document.getElementById("skip-intro-btn");
+if (skipIntroBtn) {
+  skipIntroBtn.addEventListener("click", skipIntro);
+}
+
+// ======================================================== //
+// === Start question when user clicks Start button ====== //
+// ====================================================== //
+const startQuestionBtn = document.getElementById("start-question-btn");
+if (startQuestionBtn) {
+  startQuestionBtn.addEventListener("click", startQuestion);
+}
 
 
 // ======================== //

@@ -13,6 +13,7 @@ const letsPlay64000Audio = document.getElementById("lets-play-64000-audio");
 const letsPlay1000000Audio = document.getElementById("lets-play-1000000-audio");
 const selectedAnswerAudio = document.getElementById("selected-answer-audio");
 const correctAnswerAudio = document.getElementById("correct-answer-audio");
+const correctQ1Q4Audio = document.getElementById("correct-q1-q4-audio");
 const wrongAnswerAudio = document.getElementById("wrong-answer-audio");
 const sayGoodbyeAudio = document.getElementById("say-goodbye-audio");
 
@@ -54,6 +55,7 @@ export {
   letsPlay1000000Audio,
   selectedAnswerAudio,
   correctAnswerAudio,
+  correctQ1Q4Audio,
   wrongAnswerAudio,
   sayGoodbyeAudio,
   question2000Audio,

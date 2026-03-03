@@ -128,9 +128,28 @@ async function displayNextQuestion() {
     // Play intro audio and wait for it to finish
     introAudio.play();
     
-    // Wait for intro audio to finish before showing question
+    // Show skip milestone button
+    const skipMilestoneBtn = document.getElementById('skip-milestone-btn');
+    skipMilestoneBtn.classList.remove('hidden');
+    
+    // Wait for intro audio to finish or skip button to be clicked
     await new Promise((resolve) => {
-      introAudio.addEventListener('ended', resolve, { once: true });
+      const handleEnded = () => {
+        skipMilestoneBtn.classList.add('hidden');
+        resolve();
+      };
+      
+      const handleSkip = () => {
+        introAudio.pause();
+        introAudio.currentTime = 0;
+        skipMilestoneBtn.classList.add('hidden');
+        skipMilestoneBtn.removeEventListener('click', handleSkip);
+        introAudio.removeEventListener('ended', handleEnded);
+        resolve();
+      };
+      
+      introAudio.addEventListener('ended', handleEnded, { once: true });
+      skipMilestoneBtn.addEventListener('click', handleSkip, { once: true });
     });
     
     // Show question area after intro finishes

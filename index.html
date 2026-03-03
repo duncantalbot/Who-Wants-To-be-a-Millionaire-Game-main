@@ -22,10 +22,10 @@
     />
     <!-- Scripts -->
     <!-- <script defer src="scripts/script.js"></script> -->
-    <script defer type="module" src="src/index.js?v=30"></script>
+    <script defer type="module" src="src/index.js?v=51"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="dist/output.css?v=30" />
+    <link rel="stylesheet" href="dist/output.css?v=51" />
 
     <title>Who Wants to Be a Millionaire</title>
   </head>
@@ -42,13 +42,14 @@
     <audio id="lets-play-1000000-audio" src="audio/58 Let's Play $1,000,000.mp3"></audio>
     <audio id="selected-answer-audio" src="audio/selected-answer.mp3"></audio>
     <audio id="correct-answer-audio" src="audio/correct-answer.mp3"></audio>
+    <audio id="correct-q1-q4-audio" src="audio/Correct (Q1 - Q4).mp3"></audio>
     <audio id="wrong-answer-audio" src="audio/wrong-answer-audio.mp3"></audio>
     <audio id="say-goodbye-audio" src="audio/Say Goodbye To Contestant.mp3"></audio>
     
     <!-- Lifeline Audio -->
-    <audio loop id="fifty-fifty-audio" src="audio/50-50.mp3"></audio>
-    <audio loop id="phone-friend-audio" src="audio/Phone-A-Friend.mp3"></audio>
-    <audio loop id="ask-audience-audio" src="audio/Ask The Audience.mp3"></audio>
+    <audio id="fifty-fifty-audio" src="audio/50-50.mp3"></audio>
+    <audio id="phone-friend-audio" src="audio/Phone-A-Friend.mp3"></audio>
+    <audio id="ask-audience-audio" src="audio/Ask The Audience.mp3"></audio>
     
     <!-- Milestone Question Audio -->
     <audio loop id="question-2000-audio" src="audio/14 $2,000 Question.mp3"></audio>
@@ -207,6 +208,24 @@
 
         <!-- Game Control Buttons - Fixed Bottom Right -->
         <div class="fixed bottom-3 right-3 flex flex-col gap-1 z-50">
+          <button
+            id="skip-intro-btn"
+            class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"
+          >
+            Skip Intro
+          </button>
+          <button
+            id="start-question-btn"
+            class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"
+          >
+            Start
+          </button>
+          <button
+            id="skip-milestone-btn"
+            class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"
+          >
+            Next
+          </button>
           <button
             id="show-choice-btn"
             class="hidden rounded border border-border px-2 py-1 text-white text-xs font-semibold bg-gradient-to-b from-darkerBlue via-Blue to-darkerBlue hover:bg-gradient-to-b hover:from-orangeGradientLight hover:to-orangeGradientDark hover:text-black hover:border-orange shadow-md"

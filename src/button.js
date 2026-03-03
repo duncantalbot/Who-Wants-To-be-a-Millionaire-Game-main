@@ -20,6 +20,7 @@ const showChoiceBtn = document.getElementById("show-choice-btn");
 const revealAnswerBtn = document.getElementById("reveal-answer-btn");
 const nextQuestionBtn = document.getElementById("next-question-btn");
 const newGameBtn = document.getElementById("new-game-btn");
+const skipMilestoneBtn = document.getElementById("skip-milestone-btn");
 
 export {
   letsPlayBtn,
@@ -27,5 +28,6 @@ export {
   showChoiceBtn,
   revealAnswerBtn,
   nextQuestionBtn,
-  newGameBtn
+  newGameBtn,
+  skipMilestoneBtn
 }

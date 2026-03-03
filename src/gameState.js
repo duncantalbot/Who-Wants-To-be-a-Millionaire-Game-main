@@ -41,11 +41,6 @@ function startGame() {
   // Get audio boolean from localStorage
   let playAudio = JSON.parse(localStorage.getItem('playAudio'));
   
-  // Play Let's Play Start audio
-  if (playAudio) {
-    letsPlayStartAudio.play();
-  }
-  
   welcomeSection.classList.replace("h-screen", "h-0");
   letsPlayBtn.style.display = "none";
   questionSection.style.display = "flex";
@@ -56,7 +51,7 @@ function startGame() {
     gameSelectorDots.style.display = "none";
   }
   
-  // Hide money ladder container (which contains everything) initially - show after Let's Play Start audio finishes
+  // Hide money ladder container initially
   moneyLadderContainer.classList.add("hidden");
   
   resetLifelines();
@@ -64,17 +59,52 @@ function startGame() {
   localStorage.setItem('questionNumber', '1');
   updateMoneyLadder(1);
   
-  // Wait for Let's Play Start audio to finish before showing first question
+  // Show skip intro button
+  const skipIntroBtn = document.getElementById("skip-intro-btn");
+  skipIntroBtn.classList.remove("hidden");
+  
+  // Play Let's Play Start audio
   if (playAudio) {
+    letsPlayStartAudio.play();
+    
+    // When intro finishes, hide skip button and show start button
     letsPlayStartAudio.addEventListener('ended', function() {
-      moneyLadderContainer.classList.remove("hidden");
-      displayNextQuestion();
-    }, { once: true }); // Use once: true to auto-remove listener
+      skipIntroBtn.classList.add("hidden");
+      showStartButton();
+    }, { once: true });
   } else {
-    // If audio is muted, show question immediately
-    moneyLadderContainer.classList.remove("hidden");
-    displayNextQuestion();
+    // If audio is muted, show start button immediately
+    skipIntroBtn.classList.add("hidden");
+    showStartButton();
   }
+}
+
+// ==== Skip Intro Function ==== //
+function skipIntro() {
+  // Stop intro audio
+  letsPlayStartAudio.pause();
+  letsPlayStartAudio.currentTime = 0;
+  
+  // Hide skip intro button and show start button
+  const skipIntroBtn = document.getElementById("skip-intro-btn");
+  skipIntroBtn.classList.add("hidden");
+  showStartButton();
+}
+
+// ==== Show Start Button ==== //
+function showStartButton() {
+  const startQuestionBtn = document.getElementById("start-question-btn");
+  startQuestionBtn.classList.remove("hidden");
+}
+
+// ==== Start Question Function ==== //
+function startQuestion() {
+  const startQuestionBtn = document.getElementById("start-question-btn");
+  startQuestionBtn.classList.add("hidden");
+  
+  // Show money ladder and first question
+  moneyLadderContainer.classList.remove("hidden");
+  displayNextQuestion();
 }
 
 // ============================ //
@@ -161,6 +191,8 @@ function nextQuestion() {
 
 export {
   startGame,
+  skipIntro,
+  startQuestion,
   endGame,
   resetState,
   updateMoneyLadder,
