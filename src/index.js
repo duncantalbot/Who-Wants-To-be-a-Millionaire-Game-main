@@ -64,13 +64,13 @@ gameDots.forEach((dot, index) => {
     
     // Remove active styling from all dots
     gameDots.forEach(d => {
-      d.classList.remove('bg-orange', 'border-orange');
-      d.classList.add('bg-gray-400', 'border-gray-400');
+      d.classList.remove('bg-orange-500', 'border-orange-500');
+      d.classList.add('bg-gray-500', 'border-gray-500');
     });
     
     // Add active styling to clicked dot
-    dot.classList.remove('bg-gray-400', 'border-gray-400');
-    dot.classList.add('bg-orange', 'border-orange');
+    dot.classList.remove('bg-gray-500', 'border-gray-500');
+    dot.classList.add('bg-orange-500', 'border-orange-500');
     
     // Store selected game index
     selectedGameIndex = parseInt(dot.dataset.game);
