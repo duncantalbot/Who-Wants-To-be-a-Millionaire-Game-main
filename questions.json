@@ -45,7 +45,7 @@
         {
           "question": "Which artist holds the record for the most Grammy Awards won by a female artist?",
           "content": ["BeyoncéBeyoncé", "Taylor Swift", "Adele", "Madonna"],
-          "correct": "1"
+          "correct": "0"
         },
         {
           "question": "Which explorer completed the first circumnavigation of the Earth?",
