@@ -44,7 +44,7 @@
         },
         {
           "question": "Which artist holds the record for the most Grammy Awards won by a female artist?",
-          "content": ["BeyoncéBeyoncé", "Taylor Swift", "Adele", "Madonna"],
+          "content": ["Beyoncé", "Taylor Swift", "Adele", "Madonna"],
           "correct": "0"
         },
         {
