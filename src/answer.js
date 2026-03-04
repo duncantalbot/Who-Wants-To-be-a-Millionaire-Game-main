@@ -64,6 +64,7 @@ import {
 // ==== Track selected answer ==== //
 let selectedAnswerIndex = null;
 let isAnswerRevealed = false;
+let gameEndedByWrongAnswer = false;
 
 // ================================= //
 // ==== Handle Answer Function ==== //
@@ -161,14 +162,12 @@ function revealAnswer() {
     disableOptions();
     
     if (playAudio) {
-      // Play wrong answer audio first
+      // Play wrong answer audio
       wrongAnswerAudio.play();
-      
-      // Play Say Goodbye audio after wrong answer finishes
-      wrongAnswerAudio.addEventListener('ended', function() {
-        sayGoodbyeAudio.play();
-      }, { once: true });
     }
+    
+    // Mark that game ended due to wrong answer
+    gameEndedByWrongAnswer = true;
     
     // Show new game button
     revealAnswerBtn.classList.add("hidden");
@@ -283,7 +282,21 @@ function handleNextQuestion() {
 // ==== Handle New Game Button ==== //
 // ================================ //
 function handleNewGame() {
-  location.reload();
+  // Get audio boolean from localStorage
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  
+  // Only play goodbye tune if game ended due to wrong answer (not if player won)
+  if (playAudio && gameEndedByWrongAnswer) {
+    // Play goodbye audio before reloading
+    sayGoodbyeAudio.play();
+    
+    // Reload after audio finishes
+    sayGoodbyeAudio.addEventListener('ended', function() {
+      location.reload();
+    }, { once: true });
+  } else {
+    location.reload();
+  }
 }
 
 // ============================ //
