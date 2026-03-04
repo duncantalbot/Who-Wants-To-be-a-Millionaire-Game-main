@@ -16,6 +16,7 @@ const revealAnswerBtn = document.getElementById("reveal-answer-btn");
 const nextQuestionBtn = document.getElementById("next-question-btn");
 const newGameBtn = document.getElementById("new-game-btn");
 const skipMilestoneBtn = document.getElementById("skip-milestone-btn");
+const walkAwayBtn = document.getElementById("walk-away-btn");
 
 export {
   letsPlayBtn,
@@ -23,5 +24,6 @@ export {
   revealAnswerBtn,
   nextQuestionBtn,
   newGameBtn,
-  skipMilestoneBtn
+  skipMilestoneBtn,
+  walkAwayBtn
 }

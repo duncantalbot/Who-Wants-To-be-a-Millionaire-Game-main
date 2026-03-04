@@ -52,7 +52,8 @@ import {
   letsPlayBtn,
   revealAnswerBtn,
   nextQuestionBtn,
-  newGameBtn
+  newGameBtn,
+  walkAwayBtn
 } from "./button.js";
 
 // ==== Get Games State Functions ==== //
@@ -67,7 +68,8 @@ import {
 import {
   revealAnswer,
   handleNextQuestion,
-  handleNewGame
+  handleNewGame,
+  handleWalkAway
 } from "./answer.js";
 
 // ==== Get Lifeline Functions ==== //
@@ -147,3 +149,4 @@ askAudienceBtn.addEventListener("click", useAskAudience);
 revealAnswerBtn.addEventListener("click", revealAnswer);
 nextQuestionBtn.addEventListener("click", handleNextQuestion);
 newGameBtn.addEventListener("click", handleNewGame);
+walkAwayBtn.addEventListener("click", handleWalkAway);

@@ -3,161 +3,161 @@
     {
       "questions": [
         {
-          "question": "What is the capital of France?",
-          "content": ["London", "Berlin", "Paris", "Madrid"],
+          "question": "Which country does the car brand Ferrari come from?",
+          "content": ["Germany", "France", "Italy", "Spain"],
           "correct": "2"
         },
         {
-          "question": "How many continents are there?",
-          "content": ["5", "6", "7", "8"],
-          "correct": "2"
-        },
-        {
-          "question": "What color is the sky on a clear day?",
-          "content": ["Green", "Blue", "Red", "Yellow"],
+          "question": "Which planet in our solar system is known as the Red Planet?",
+          "content": ["Venus", "Mars", "Jupiter", "Mercury"],
           "correct": "1"
         },
         {
-          "question": "How many days are in a week?",
-          "content": ["5", "6", "7", "8"],
-          "correct": "2"
-        },
-        {
-          "question": "What is 2 + 2?",
-          "content": ["3", "4", "5", "6"],
+          "question": "Which company developed the PlayStation game console?",
+          "content": ["Nintendo", "Sony", "Microsoft", "Sega"],
           "correct": "1"
         },
         {
-          "question": "Which planet is known as the Red Planet?",
-          "content": ["Venus", "Jupiter", "Mars", "Saturn"],
+          "question": "How many players from one team are on the field at a time in soccer?",
+          "content": ["9", "10", "11", "12"],
           "correct": "2"
         },
         {
-          "question": "What is the largest ocean on Earth?",
-          "content": ["Atlantic", "Indian", "Arctic", "Pacific"],
+          "question": "Which country gifted the Statue of Liberty to the United States?",
+          "content": ["United Kingdom", "France", "Spain", "Italy"],
+          "correct": "1"
+        },
+        {
+          "question": "Which country is home to the city of Dubai?",
+          "content": ["Saudi Arabia", "Qatar", "United Arab Emirates", "Oman"],
+          "correct": "2"
+        },
+        {
+          "question": "What is the chemical symbol for sodium?",
+          "content": ["So", "Sd", "Na", "Sn"],
           "correct": "3"
         },
         {
-          "question": "How many sides does a triangle have?",
-          "content": ["2", "3", "4", "5"],
+          "question": "Which scientist is credited with discovering penicillin in 1928?",
+          "content": ["Louis PasteurLouis Pasteur", "Alexander Fleming", "Robert Koch", "Gregor Mendel"],
           "correct": "1"
         },
         {
-          "question": "What is the smallest prime number?",
-          "content": ["0", "1", "2", "3"],
+          "question": "Which artist holds the record for the most Grammy Awards won by a female artist?",
+          "content": ["BeyoncéBeyoncé", "Taylor Swift", "Adele", "Madonna"],
+          "correct": "1"
+        },
+        {
+          "question": "Which explorer completed the first circumnavigation of the Earth?",
+          "content": ["Christopher Columbus", "Ferdinand Magellan", "James Cook", "Vasco da Gama"],
+          "correct": "1"
+        },
+        {
+          "question": "In what year did the Berlin Wall fall?",
+          "content": ["1987", "1989", "1991", "1993"],
+          "correct": "1"
+        },
+        {
+          "question": "Which country has the largest Muslim population in the world?",
+          "content": ["Pakistan", "India", "Indonesia", "Bangladesh"],
           "correct": "2"
         },
         {
-          "question": "Which gas do plants absorb from the atmosphere?",
-          "content": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the freezing point of water in Celsius?",
-          "content": ["-10°C", "0°C", "10°C", "100°C"],
+          "question": "Who wrote the dystopian novel Brave New World?",
+          "content": ["George Orwell", "Aldous Huxley", "H.G. Wells", "Ray Bradbury"],
           "correct": "1"
         },
         {
-          "question": "How many legs does a spider have?",
-          "content": ["6", "8", "10", "12"],
-          "correct": "1"
+          "question": "Which artist painted The Persistence of Memory, famous for its melting clocks?",
+          "content": ["Salvador Dalí", "Pablo Picasso", "René Magritte", "Joan Miró"],
+          "correct": "0"
         },
         {
-          "question": "What is the capital of Japan?",
-          "content": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
-          "correct": "2"
-        },
-        {
-          "question": "Which element has the chemical symbol 'O'?",
-          "content": ["Gold", "Oxygen", "Silver", "Iron"],
-          "correct": "1"
-        },
-        {
-          "question": "How many hours are in a day?",
-          "content": ["12", "20", "24", "30"],
+          "question": "Which film won the Academy Award for Best Picture in 1994?",
+          "content": ["Pulp Fiction", "The Shawshank Redemption", "Forrest Gump", "Four Weddings and a Funeral"],
           "correct": "2"
         }
       ]
     },
     {
-      "questions": [
-        {
-          "question": "Who painted the Mona Lisa?",
-          "content": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the largest country by area?",
-          "content": ["Canada", "China", "USA", "Russia"],
-          "correct": "3"
-        },
-        {
-          "question": "In what year did World War II end?",
-          "content": ["1943", "1944", "1945", "1946"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the speed of light?",
-          "content": ["299,792 km/s", "150,000 km/s", "500,000 km/s", "1,000,000 km/s"],
-          "correct": "0"
-        },
-        {
-          "question": "Which vitamin is produced when skin is exposed to sunlight?",
-          "content": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
-          "correct": "3"
-        },
-        {
-          "question": "What is the hardest natural substance on Earth?",
-          "content": ["Gold", "Iron", "Diamond", "Platinum"],
-          "correct": "2"
-        },
-        {
-          "question": "How many bones are in the human body?",
-          "content": ["186", "206", "226", "246"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the largest mammal in the world?",
-          "content": ["African Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
-          "correct": "1"
-        },
-        {
-          "question": "Who wrote 'Romeo and Juliet'?",
-          "content": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the currency of the United Kingdom?",
-          "content": ["Euro", "Dollar", "Pound Sterling", "Franc"],
-          "correct": "2"
-        },
-        {
-          "question": "How many strings does a standard guitar have?",
-          "content": ["4", "5", "6", "7"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the boiling point of water?",
-          "content": ["90°C", "95°C", "100°C", "105°C"],
-          "correct": "2"
-        },
-        {
-          "question": "Which planet is closest to the Sun?",
-          "content": ["Venus", "Earth", "Mercury", "Mars"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the square root of 144?",
-          "content": ["10", "11", "12", "13"],
-          "correct": "2"
-        },
-        {
-          "question": "How many Olympic rings are there?",
-          "content": ["4", "5", "6", "7"],
-          "correct": "1"
-        }
-      ]
+  "questions": [
+    {
+      "question": "Which animal is known as the 'King of the Jungle'?",
+      "content": ["Tiger", "Lion", "Elephant", "Gorilla"],
+      "correct": "1"
     },
+    {
+      "question": "Which country uses the currency called the yen?",
+      "content": ["China", "Japan", "South Korea", "Thailand"],
+      "correct": "1"
+    },
+    {
+      "question": "What is the largest planet in our solar system?",
+      "content": ["Saturn", "Jupiter", "Neptune", "Uranus"],
+      "correct": "1"
+    },
+    {
+      "question": "How many days are there in a leap year?",
+      "content": ["364", "365", "366", "367"],
+      "correct": "2"
+    },
+    {
+      "question": "Which country is home to the Taj Mahal?",
+      "content": ["Pakistan", "India", "Bangladesh", "Nepal"],
+      "correct": "1"
+    },
+    {
+      "question": "Which blood cells help the body fight infection?",
+      "content": ["Red blood cells", "White blood cells", "Platelets", "Plasma cells"],
+      "correct": "1"
+    },
+    {
+      "question": "Which metal is liquid at room temperature?",
+      "content": ["Gallium", "Mercury", "Caesium", "Bromine"],
+      "correct": "1"
+    },
+    {
+      "question": "Which singer released the album 25 in 2015?",
+      "content": ["Adele", "Taylor Swift", "Beyoncé", "Rihanna"],
+      "correct": "0"
+    },
+    {
+      "question": "In which sport would you compete for the Stanley Cup?",
+      "content": ["Basketball", "Baseball", "Ice hockey", "American football"],
+      "correct": "2"
+    },
+    {
+      "question": "What does the word 'karaoke' literally mean in Japanese?",
+      "content": ["Empty orchestra", "Silent singer", "Recorded music", "Public performance"],
+      "correct": "0"
+    },
+    {
+      "question": "Which continent is the largest by land area?",
+      "content": ["Africa", "Asia", "North America", "Antarctica"],
+      "correct": "1"
+    },
+    {
+      "question": "Which element has the chemical symbol 'W'?",
+      "content": ["Tungsten", "Tin", "Titanium", "Zinc"],
+      "correct": "0"
+    },
+    {
+      "question": "Which band released the album OK Computer in 1997?",
+      "content": ["Oasis", "Radiohead", "Blur", "Coldplay"],
+      "correct": "1"
+    },
+    {
+      "question": "Which river flows through the most countries?",
+      "content": ["Danube", "Nile", "Amazon", "Mekong"],
+      "correct": "0"
+    },
+    {
+      "question": "What does the acronym SQL stand for?",
+      "content": ["Standard Query Language", "Structured Query Language", "Sequential Query Language", "System Query Language"],
+      "correct": "1"
+    }
+  ]
+},
     {
       "questions": [
         {

@@ -319,9 +319,68 @@ function enableOptions() {
   });
 }
 
+// ============================ //
+// ==== Walk Away Function ==== //
+// ============================ //
+function handleWalkAway() {
+  // Get audio boolean from localStorage
+  let playAudio = JSON.parse(localStorage.getItem('playAudio'));
+  
+  // Stop any playing audio
+  const allAudios = [
+    letsPlayAudio,
+    selectedAnswerAudio,
+    correctAnswerAudio,
+    correctQ1Q4Audio,
+    wrongAnswerAudio,
+    fiftyFiftyAudio,
+    phoneFriendAudio,
+    askAudienceAudio,
+    question2000Audio,
+    question4000Audio,
+    question8000Audio,
+    question16000Audio,
+    question32000Audio,
+    question64000Audio,
+    question125000Audio,
+    question250000Audio,
+    question500000Audio,
+    question1000000Audio
+  ];
+  
+  allAudios.forEach(audio => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+  
+  // Disable options
+  disableOptions();
+  
+  // Hide all buttons
+  revealAnswerBtn.classList.add("hidden");
+  nextQuestionBtn.classList.add("hidden");
+  newGameBtn.classList.add("hidden");
+  
+  // Play goodbye audio and reload
+  if (playAudio) {
+    sayGoodbyeAudio.play();
+    
+    // Reload after audio finishes
+    sayGoodbyeAudio.addEventListener('ended', function() {
+      location.reload();
+    }, { once: true });
+  } else {
+    // If audio is off, reload immediately
+    location.reload();
+  }
+}
+
 export {
   handleAnswer,
   revealAnswer,
   handleNextQuestion,
-  handleNewGame
+  handleNewGame,
+  handleWalkAway
 }
