@@ -35,7 +35,7 @@
         {
           "question": "What is the chemical symbol for sodium?",
           "content": ["So", "Sd", "Na", "Sn"],
-          "correct": "3"
+          "correct": "2"
         },
         {
           "question": "Which scientist is credited with discovering penicillin in 1928?",
