@@ -159,162 +159,162 @@
   ]
 },
     {
-      "questions": [
-        {
-          "question": "What is the chemical formula for water?",
-          "content": ["H2O", "CO2", "O2", "H2SO4"],
-          "correct": "0"
-        },
-        {
-          "question": "Who was the first person to walk on the moon?",
-          "content": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the smallest country in the world?",
-          "content": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
-          "correct": "1"
-        },
-        {
-          "question": "How many teeth does an adult human have?",
-          "content": ["28", "30", "32", "34"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the main ingredient in guacamole?",
-          "content": ["Tomato", "Avocado", "Pepper", "Onion"],
-          "correct": "1"
-        },
-        {
-          "question": "Which is the longest river in the world?",
-          "content": ["Amazon", "Nile", "Yangtze", "Mississippi"],
-          "correct": "1"
-        },
-        {
-          "question": "What year did the Titanic sink?",
-          "content": ["1910", "1911", "1912", "1913"],
-          "correct": "2"
-        },
-        {
-          "question": "How many players are on a soccer team?",
-          "content": ["9", "10", "11", "12"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the largest organ in the human body?",
-          "content": ["Heart", "Liver", "Skin", "Brain"],
-          "correct": "2"
-        },
-        {
-          "question": "Who invented the telephone?",
-          "content": ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Guglielmo Marconi"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the tallest mountain in the world?",
-          "content": ["K2", "Kilimanjaro", "Mount Everest", "Denali"],
-          "correct": "2"
-        },
-        {
-          "question": "How many keys are on a standard piano?",
-          "content": ["76", "82", "88", "94"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the capital of Australia?",
-          "content": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-          "correct": "2"
-        },
-        {
-          "question": "Which blood type is known as the universal donor?",
-          "content": ["A", "B", "AB", "O"],
-          "correct": "3"
-        },
-        {
-          "question": "How many seconds are in an hour?",
-          "content": ["1,800", "2,400", "3,000", "3,600"],
-          "correct": "3"
-        }
-      ]
+  "questions": [
+    {
+      "question": "Which fruit is traditionally used to make guacamole?",
+      "content": ["Mango", "Avocado", "Papaya", "Lime"],
+      "correct": "1"
     },
     {
-      "questions": [
-        {
-          "question": "What is the largest desert in the world?",
-          "content": ["Sahara", "Arabian", "Gobi", "Antarctic"],
-          "correct": "3"
-        },
-        {
-          "question": "How many chambers does the human heart have?",
-          "content": ["2", "3", "4", "5"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the national animal of China?",
-          "content": ["Tiger", "Dragon", "Giant Panda", "Lion"],
-          "correct": "2"
-        },
-        {
-          "question": "Who painted 'The Starry Night'?",
-          "content": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dali"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the smallest unit of life?",
-          "content": ["Atom", "Molecule", "Cell", "Tissue"],
-          "correct": "2"
-        },
-        {
-          "question": "How many planets are in our solar system?",
-          "content": ["7", "8", "9", "10"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the capital of Canada?",
-          "content": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
-          "correct": "3"
-        },
-        {
-          "question": "Which gas makes up most of Earth's atmosphere?",
-          "content": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-          "correct": "1"
-        },
-        {
-          "question": "How many years are in a century?",
-          "content": ["50", "75", "100", "150"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the largest planet in our solar system?",
-          "content": ["Saturn", "Jupiter", "Neptune", "Uranus"],
-          "correct": "1"
-        },
-        {
-          "question": "Who wrote 'Harry Potter'?",
-          "content": ["J.R.R. Tolkien", "C.S. Lewis", "J.K. Rowling", "Roald Dahl"],
-          "correct": "2"
-        },
-        {
-          "question": "What is the freezing point of water in Fahrenheit?",
-          "content": ["0°F", "32°F", "64°F", "100°F"],
-          "correct": "1"
-        },
-        {
-          "question": "How many sides does a hexagon have?",
-          "content": ["5", "6", "7", "8"],
-          "correct": "1"
-        },
-        {
-          "question": "What is the symbol for gold on the periodic table?",
-          "content": ["Go", "Gd", "Au", "Ag"],
-          "correct": "2"
-        },
-        {
-          "question": "How many minutes are in 3 hours?",
-          "content": ["150", "160", "170", "180"],
-          "correct": "3"
-        }
-      ]
+      "question": "How many minutes are there in three hours?",
+      "content": ["120", "150", "180", "240"],
+      "correct": "2"
+    },
+    {
+      "question": "Which continent is the Sahara Desert located on?",
+      "content": ["Asia", "Africa", "Australia", "South America"],
+      "correct": "1"
+    },
+    {
+      "question": "Which metal is commonly used to make electrical wiring because it conducts electricity well?",
+      "content": ["Copper", "Iron", "Lead", "Zinc"],
+      "correct": "0"
+    },
+    {
+      "question": "Which animated film features the characters Woody and Buzz Lightyear?",
+      "content": ["Shrek", "Toy Story", "Finding Nemo", "The Incredibles"],
+      "correct": "1"
+    },
+    {
+      "question": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+      "content": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      "correct": "2"
+    },
+    {
+      "question": "Which empire was ruled by Genghis Khan in the early 13th century?",
+      "content": ["Ottoman Empire", "Mongol Empire", "Persian Empire", "Byzantine Empire"],
+      "correct": "1"
+    },
+    {
+      "question": "In tennis, what is the term for winning all four major championships in a single calendar year?",
+      "content": ["Golden Set", "Grand Slam", "Masters Series", "Clean Sweep"],
+      "correct": "1"
+    },
+    {
+      "question": "Which instrument is used to measure earthquakes?",
+      "content": ["Barometer", "Seismograph", "Thermometer", "Altimeter"],
+      "correct": "1"
+    },
+    {
+      "question": "Which novel tells the story of Captain Ahab’s obsessive pursuit at sea?",
+      "content": ["Treasure Island", "Moby-Dick", "The Old Man and the Sea", "Robinson Crusoe"],
+      "correct": "1"
+    },
+    {
+      "question": "Which language is the source of the most English words?",
+      "content": ["French", "Latin", "German", "Greek"],
+      "correct": "1"
+    },
+    {
+      "question": "Which artist painted the famous work The Starry Night?",
+      "content": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"],
+      "correct": "1"
+    },
+    {
+      "question": "Which planet in our solar system has the longest year?",
+      "content": ["Saturn", "Uranus", "Neptune", "Pluto"],
+      "correct": "2"
+    },
+    {
+      "question": "Which treaty formally ended World War I in 1919?",
+      "content": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Vienna", "Treaty of Tordesillas"],
+      "correct": "1"
+    },
+    {
+      "question": "Which country has the longest coastline in the world?",
+      "content": ["Russia", "Australia", "Canada", "Indonesia"],
+      "correct": "2"
     }
+  ]
+},
+    {
+  "questions": [
+    {
+      "question": "How many legs does a spider have?",
+      "content": ["6", "8", "10", "12"],
+      "correct": "1"
+    },
+    {
+      "question": "At sea level, what is the freezing point of water in degrees Celsius?",
+      "content": ["0", "10", "32", "100"],
+      "correct": "0"
+    },
+    {
+      "question": "Which famous painting depicts a woman with an enigmatic smile and was painted by Leonardo da Vinci?",
+      "content": ["The Birth of Venus", "Mona Lisa", "The Last Supper", "Girl with a Pearl Earring"],
+      "correct": "1"
+    },
+    {
+      "question": "What is the largest mammal on Earth?",
+      "content": ["Elephant", "Blue whale", "Giraffe", "Great white shark"],
+      "correct": "1"
+    },
+    {
+      "question": "What is the hardest naturally occurring mineral on Earth?",
+      "content": ["Quartz", "Topaz", "Diamond", "Corundum"],
+      "correct": "2"
+    },
+    {
+      "question": "Which element has the chemical symbol 'Ag'?",
+      "content": ["Argon", "Silver", "Gold", "Aluminium"],
+      "correct": "1"
+    },
+    {
+      "question": "In cricket, how many balls are there in a standard over?",
+      "content": ["4", "5", "6", "8"],
+      "correct": "2"
+    },
+    {
+      "question": "What does 'GPS' stand for?",
+      "content": ["Global Positioning System", "General Positioning Service", "Geographic Path System", "Global Path Satellite"],
+      "correct": "0"
+    },
+    {
+      "question": "Which part of a cell is often called the 'powerhouse' because it produces energy?",
+      "content": ["Nucleus", "Mitochondria", "Ribosome", "Cell wall"],
+      "correct": "1"
+    },
+    {
+      "question": "Who wrote The Hobbit?",
+      "content": ["C.S. Lewis", "J.R.R. Tolkien", "J.K. Rowling", "George R.R. Martin"],
+      "correct": "1"
+    },
+    {
+      "question": "Which city was historically known as Constantinople?",
+      "content": ["Athens", "Istanbul", "Rome", "Alexandria"],
+      "correct": "1"
+    },
+    {
+      "question": "What is the unit of electrical resistance?",
+      "content": ["Volt", "Watt", "Ohm", "Ampere"],
+      "correct": "2"
+    },
+    {
+      "question": "Which sea lies between Saudi Arabia and Africa?",
+      "content": ["Black Sea", "Red Sea", "Caspian Sea", "Arabian Sea"],
+      "correct": "1"
+    },
+    {
+      "question": "Which artist painted Guernica?",
+      "content": ["Pablo Picasso", "Salvador Dalí", "Henri Matisse", "Joan Miró"],
+      "correct": "0"
+    },
+    {
+      "question": "How many bones are there in the adult human body?",
+      "content": ["198", "206", "214", "221"],
+      "correct": "1"
+    }
+  ]
+}
   ]
 }
